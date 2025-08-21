@@ -7,7 +7,7 @@ function App() {
     const [sortConfig, setSortConfig] = useState({ key: "subscribers", direction: "desc" });
 
     useEffect(() => {
-        axios.get("http://127.0.0.1:8000/channels")
+        axios.get(`${import.meta.env.VITE_API_URL}/data`)
             .then(res => setChannels(res.data))
             .catch(err => console.error("Error fetching data:", err));
     }, []);
